@@ -1,0 +1,20 @@
+<%- include('./layout/header.ejs') %>
+
+<section>
+
+    <% data.forEach(data=>{ %>
+        <h2><%= data.quote %></h2>
+        <p><%= data.character %></p>
+        <p><%= data.characterDirection %></p>
+        <img src="<%= data.image %>" alt="">
+
+        <form action="/savetodb" method="POST">
+        <input type="hidden" name="quote" value="<%= data.quote %>">
+        <input type="hidden" name="character" value="<%= data.character %>">
+        <input type="hidden" name="characterDirection" value="<%= data.characterDirection %>">
+        <input type="hidden" name="image" value="<%= data.image %>">
+        <button type="submit">♥</button>
+        </form>
+       <% }) %>
+
+</section>

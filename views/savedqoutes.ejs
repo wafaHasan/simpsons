@@ -1,0 +1,13 @@
+<%- include('./layout/header.ejs') %>
+
+
+
+<section>
+    <% data.forEach(data=>{ %>
+        <h2><%= data.quote %></h2>
+        <p><%= data.character %></p>
+        <p><%= data.characterDirection %></p>
+        <img src="<%= data.image %>" alt="">
+        <a href="/showdatails/<%= data.id %>">Show details</a>
+       <% }) %>
+</section>
